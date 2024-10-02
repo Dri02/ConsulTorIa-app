@@ -72,7 +72,7 @@ export default function ({ navigation }) {
       password: password
     });
 
-    await axios.post("http://192.168.1.103:3004/accessAccount", data, {
+    await axios.post("http://192.168.31.158:3004/accessAccount", data, {
       headers: {
         'Content-Type': 'application/json'
       },
@@ -91,7 +91,7 @@ export default function ({ navigation }) {
   useEffect(() => {
     AsyncStorage.getItem('token')
       .then(async token => {
-        await axios.get("http://192.168.1.103:3004/me", {
+        await axios.get("http://192.168.31.158:3004/me", {
           headers: {
             'Content-Type': 'application/json',
             'x-access-token': token

@@ -50,7 +50,7 @@ export default function ({ navigation }) {
 
     console.log(data);
 
-    await axios.post('http://192.168.1.103:3002/getFoldersData', data, {
+    await axios.post('http://192.168.31.158:3002/getFoldersData', data, {
       headers: {
         'Content-Type': 'application/json'
       },
@@ -125,7 +125,7 @@ export default function ({ navigation }) {
       bucket: bucket
     });
 
-    await axios.post("http://192.168.1.103:3002/downloadFolder", data, {
+    await axios.post("http://192.168.31.158:3002/downloadFolder", data, {
       headers: {
         'Content-Type': 'application/json'
       },
@@ -170,7 +170,7 @@ export default function ({ navigation }) {
       bucket: bucket
     });
 
-    await axios.post("http://192.168.1.103:3002/deleteFile", data, {
+    await axios.post("http://192.168.31.158:3002/deleteFile", data, {
       headers: {
         'Content-Type': 'application/json'
       },
@@ -212,7 +212,7 @@ export default function ({ navigation }) {
       bucket: bucket
     });
 
-    await axios.post("http://192.168.1.103:3002/fileUrl", data, {
+    await axios.post("http://192.168.31.158:3002/fileUrl", data, {
       headers: {
         'Content-Type': 'application/json'
       },

@@ -87,38 +87,52 @@ export default function ({ navigation }) {
   };
 
   const register = async () => {
-    const data = JSON.stringify({
+    const data = {
       name: name,
       lastname: lastname,
       enterprise: enterprise,
       username: user,
       email: email,
       password: password
-    });
+    };
 
-    await axios.post("http://192.168.1.103:3004/verifyEmailRegister", data, {
-      headers: {
-        'Content-Type': 'application/json'
-      },
-    }).then(response => {
-        setInfo(response.data);
-        navigation.navigate("VerifyEmail", { email: email, role: 'register', data: data });
-    }).catch(error => {
-      setInfo(error.response.data);
-    });
+    try {
+      const response = await axios.post("http://192.168.31.158:3004/verifyEmailRegister", data, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      setInfo(response.data);
+      navigation.navigate("VerifyEmail", { email: email, role: 'register', data: data });
+    } catch (error) {
+      setInfo(error.response ? error.response.data : 'Error al conectar con el servidor');
+    }
   };
 
   const getEnterprises = async () => {
-    await axios.get("http://192.168.1.103:3004/getEnterprises")
-      .then(async response => {
+    try {
+      const response = await axios.get("http://192.168.31.158:3004/getEnterprises");
+      if (response) {
         const dataArray = response.data.map(item => ({
           value: item.trim(),
           label: item.trim()
         }));
         setEnterprises(dataArray);
-      }).catch(error => {
-        setInfo(error.response.data);
-      });
+      } else {
+        setInfo("No data found in response");
+      }
+    } catch (error) {
+      if (error.response) {
+        // El servidor respondió con un código de estado que no está en el rango de 2xx
+        setInfo(`Server error: ${error.response.data || error.response.status}`);
+      } else if (error.request) {
+        // La solicitud se hizo pero no se recibió respuesta
+        setInfo("No response from server. Please check if the server is running.");
+      } else {
+        // Ocurrió un error en la configuración de la solicitud
+        setInfo(`Error: ${error.message}`);
+      }
+    }
   };
   
   const RenderRightIcon = () => (
@@ -572,4 +586,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-});
+}); 

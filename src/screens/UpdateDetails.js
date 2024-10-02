@@ -57,7 +57,7 @@ export default function ({ navigation }) {
   };
 
   const sendUpdate = async (newData) => {
-    await axios.post("http://192.168.1.103:3002/modifyJson", newData, {
+    await axios.post("http://192.168.31.158:3002/modifyJson", newData, {
       headers: {
         'Content-Type': 'application/json'
       },
@@ -70,7 +70,7 @@ export default function ({ navigation }) {
               notRecursive: false,
             });
 
-            await axios.post("http://192.168.1.103:3002/modifyJson", sendData, {
+            await axios.post("http://192.168.31.158:3002/modifyJson", sendData, {
               headers: {
                 'Content-Type': 'application/json'
               },
@@ -96,7 +96,7 @@ export default function ({ navigation }) {
           `Consultorías TI/${data.nameConsultancy}/Observaciones/${nameScreen}`,
     });
 
-    await axios.post("http://192.168.1.103:3002/nameFolders", verifyData, {
+    await axios.post("http://192.168.31.158:3002/nameFolders", verifyData, {
       headers: {
         'Content-Type': 'application/json'
       },
@@ -153,7 +153,7 @@ export default function ({ navigation }) {
         prefix: `Consultorías TI/${data.nameConsultancy}/Observaciones/`,
       });
 
-      axios.post('http://192.168.1.103:3002/nameFolders', sendData, {
+      axios.post('http://192.168.31.158:3002/nameFolders', sendData, {
         headers: {
           'Content-Type': 'application/json'
         },

@@ -53,7 +53,7 @@ export default function ({ navigation }) {
       email: email
     });
 
-    await axios.post("http://192.168.1.103:3004/verifyEmailRecover", data, {
+    await axios.post("http://192.168.31.158:3004/verifyEmailRecover", data, {
       headers: {
         'Content-Type': 'application/json'
       },

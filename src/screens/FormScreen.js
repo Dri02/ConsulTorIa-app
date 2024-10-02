@@ -51,12 +51,12 @@ export default function ({ navigation }) {
     isDisabledEditWorkerIcon: true,
   });
   const urls = [
-    "http://192.168.1.103:4000/api/entity",
-    "http://192.168.1.103:4000/api/ueb",
-    "http://192.168.1.103:4000/api/unit",
-    "http://192.168.1.103:4000/api/area",
-    "http://192.168.1.103:4000/api/process",
-    "http://192.168.1.103:4000/api/worker"
+    "http://192.168.31.158:4000/api/entity",
+    "http://192.168.31.158:4000/api/ueb",
+    "http://192.168.31.158:4000/api/unit",
+    "http://192.168.31.158:4000/api/area",
+    "http://192.168.31.158:4000/api/process",
+    "http://192.168.31.158:4000/api/worker"
   ];
   const infoUrls = {
     "entity": {

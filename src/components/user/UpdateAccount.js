@@ -127,7 +127,7 @@ export default function ({ navigation }) {
     formData.append("photo", photo);
     formData.append("olduser", olduser);
 
-    await axios.post("http://192.168.1.103:3004/verifyEmailUpdate", data, {
+    await axios.post("http://192.168.31.158:3004/verifyEmailUpdate", data, {
       headers: {
         'Content-Type': 'application/json'
       },

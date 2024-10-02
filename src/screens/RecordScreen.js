@@ -24,7 +24,7 @@ import Animated, {
 } from 'react-native-reanimated';
 
 export default function ({ navigation }) {
-  const socket = io.connect("http://192.168.1.103:3001");
+  const socket = io.connect("http://192.168.31.158:3001");
   const [isStartedRequest, setIsStartedRequest] = useState(false);
   const [isPlayedRequest, setIsPlayedRequest] = useState(false);
   const [isPausedRequest, setIsPausedRequest] = useState(true);
@@ -105,7 +105,7 @@ export default function ({ navigation }) {
       bucket: dataParams.bucket
     });
 
-    await axios.post("http://192.168.1.103:3002/nameFolders", data, {
+    await axios.post("http://192.168.31.158:3002/nameFolders", data, {
       headers: {
         'Content-Type': 'application/json'
       },
