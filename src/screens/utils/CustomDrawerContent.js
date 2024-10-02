@@ -111,7 +111,7 @@ export default ({ navigation }) => {
               setIsDarkMode(!isDarkMode);
             }}
           >
-            <Ionicons name={isDarkMode ? "ios-sunny" : "ios-moon"} size={24} color="white" style={{ transform: [{ scaleX: -1 }] }} />
+            <Ionicons name={isDarkMode ? "sunny" : "moon"} size={24} color="white" style={{ transform: [{ scaleX: -1 }] }} />
           </TouchableOpacity>
         </View>
         <View>
