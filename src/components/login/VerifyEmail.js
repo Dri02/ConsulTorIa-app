@@ -79,7 +79,7 @@ export default function ({ navigation }) {
       } else if (role === 'recover') {
         navigation.navigate("NewPassword", { email: email })
       } else if (role === 'update') {
-        await axios.post("http://192.168.31.158:3004/updateAccount", data, {
+        await axios.post("http://192.168.136.158:3004/updateAccount", data, {
           headers: {
             "Content-Type": 'multipart/form-data',
           },

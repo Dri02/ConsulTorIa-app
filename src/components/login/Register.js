@@ -111,7 +111,7 @@ export default function ({ navigation }) {
 
   const getEnterprises = async () => {
     try {
-      const response = await axios.get("http://192.168.31.158:3004/getEnterprises");
+      const response = await axios.get("http://192.168.136.158:3004/getEnterprises");
       if (response) {
         const dataArray = response.data.map(item => ({
           value: item.trim(),

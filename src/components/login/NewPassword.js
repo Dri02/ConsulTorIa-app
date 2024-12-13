@@ -61,7 +61,7 @@ export default function ({ navigation }) {
       password: password
     });
   
-    await axios.post("http://192.168.31.158:3004/recoverAccount", data, {
+    await axios.post("http://192.168.136.158:3004/recoverAccount", data, {
       headers: {
         'Content-Type': 'application/json'
       },
