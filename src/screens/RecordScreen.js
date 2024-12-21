@@ -105,7 +105,7 @@ export default function ({ navigation }) {
       bucket: dataParams.bucket
     });
 
-    await axios.post("http://192.168.31.158:3002/nameFolders", data, {
+    await axios.post("http://192.168.136.158:3002/nameFolders", data, {
       headers: {
         'Content-Type': 'application/json'
       },

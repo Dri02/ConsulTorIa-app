@@ -243,7 +243,7 @@ export default function ({ route, navigation }) {
   useEffect(() => {
     AsyncStorage.getItem('token')
       .then(async token => {
-        await axios.get("http://192.168.31.158:3004/me", {
+        await axios.get("http://192.168.136.158:3004/me", {
           headers: {
             'Content-Type': 'application/json',
             'x-access-token': token
@@ -255,7 +255,7 @@ export default function ({ route, navigation }) {
             enterprise: response.data.enterprise
           });
 
-          await axios.post("http://192.168.31.158:3004/getBucket", data, {
+          await axios.post("http://192.168.136.158:3004/getBucket", data, {
             headers: {
               'Content-Type': 'application/json'
             },
